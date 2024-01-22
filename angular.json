@@ -21,11 +21,10 @@
             "index": "src/index.html",
             "main": "src/main.element.ts",
             "singleBundle": true,
+            "bundleStyles": true,
+            "keepStyles": true,
             "tsConfig": "tsconfig.element.json",
-            "inlineStyleLanguage": "scss",
-            "styles": [
-              "src/styles.scss"
-            ]
+            "inlineStyleLanguage": "scss"
           },
           "configurations": {
             "production": {
@@ -38,7 +37,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "400kb"
                 }
               ],
               "outputHashing": "none"
@@ -116,9 +115,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": [],
             "scripts": []
           },
           "configurations": {
