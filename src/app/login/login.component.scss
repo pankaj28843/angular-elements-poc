@@ -1,7 +1,21 @@
+.login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding: 16px;
+  margin: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+}
+.full-width {
+  width: 100%;
+}
+
 .d-flex {
   display: flex;
   flex-direction: column;
   width: 200px;
+  padding: 8px;
 }
 .mt-8 {
   margin-top: 8px;

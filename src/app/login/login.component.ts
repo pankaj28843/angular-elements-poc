@@ -6,18 +6,34 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  styleUrls: ['./login.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class LoginComponent {
-  loginForm: FormGroup;
+  public loginForm: FormGroup;
 
   @Input() submitColor: string = 'unset';
   @Output() formSubmitted: EventEmitter<{ email: string; password: string }> =
@@ -25,8 +41,8 @@ export class LoginComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
-      email: [''],
-      password: [''],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
   }
 

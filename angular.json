@@ -22,7 +22,10 @@
             "main": "src/main.element.ts",
             "singleBundle": true,
             "tsConfig": "tsconfig.element.json",
-            "inlineStyleLanguage": "scss"
+            "inlineStyleLanguage": "scss",
+            "styles": [
+              "src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {
@@ -99,7 +102,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/angular-elements-poc-serve",
             "index": "src/index.html",
